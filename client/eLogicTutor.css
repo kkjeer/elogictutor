@@ -1,0 +1,306 @@
+/***********GENERAL eLogicTutor*************/     
+     /*styles the borderd rules that go in the draggable options div*/
+    .bordered {
+        border: 1px solid black; 
+        border-radius: 15px; 
+        width: 80; height: 20; 
+        font-size: 16px; font-family: 'Arial'; 
+        padding-left: 10px; padding-right: 10px; 
+        padding-top: 5px; padding-bottom: 5px;
+      }
+    .bordered.ui.draggable-helper-dragging {
+      width: 120; 
+      height: 30;
+    }
+
+    /*styles all the tds*/
+    td{
+      padding: 4px; 
+      text-align: center; 
+      vertical-align: center;
+    }
+
+    /*styles the droppable options that accept the draggable rules, conclusions, and premises*/
+    .correctRule, .correctConclusion, .correctPremise, .correctPremise2 { 
+      border: 2px dashed #000000; 
+      border-radius: 5px;
+      display:inline; 
+      background-color: #ffff00;
+      color: #000000;
+    }
+    .correctRule {
+      padding-left: 10px; padding-right: 10px; 
+      padding-top: 6px; padding-bottom: 6px; 
+      margin-left: 3px;
+    }
+    .correctConclusion {
+      padding-left:7px; padding-right:7px; 
+      padding-top:6px; padding-bottom:6px;
+    }
+    .correctPremise, .correctPremise2 {
+      padding-left: 5px; padding-right: 5px; 
+      padding-top: 6px; padding-bottom: 6px;
+    }
+
+    /*changes the color of the bordered rules when they're being dragged*/
+    .bordered.ui-draggable-dragging, .draggable.ui-draggable-dragging {
+      background: #ffff00; 
+      color: #000000; 
+      border-color: #000000;
+    }
+    
+    /*borders the three headings and tds*/
+    th, .thJT, .tdContainer{
+      border: 2px ridge gray; 
+      text-align: center;
+    }
+
+    /*the three tds that make up the JT interface*/
+    #tdTracker, #tdTrackerPartial {
+      overflow-y: auto; 
+      background-color: #33cccc;
+    }
+    #tdLine, #tdLinePartial {
+      text-align: center; 
+      background-color: #009999;
+    }
+    #tdLinePartial{overflow-y: auto;}
+    #tdRules, #tdRulesPartial{background-color: #33cccc;}
+
+    #instructions{word-wrap: break-word;}
+
+    /*sets the font of various labels*/
+    #currentLevel th, #currentLevel td{border: none; /*width: 33%;*/}
+    #currentLevel, #line, #ruleTracker, #example, #minMastery, #exlabel, #exerciselabel, #ruleInstructions, #ruleInstructionsPartial, #hintsLabel, #hintsLabelPartial, #keyboardSpan, #virtualKeyboardLabel, .hoverLabel{
+      font-size: 18px; 
+      font-family: 'Monospace';
+    }
+    .correctRule, .correctPremise, .correctPremise2, .correctConclusion, .ruleBox, .premiseBox, .premiseBox2, .conclusionBox, .lineNumberBox, .draggable, .helper{
+      font-size: 16px; 
+      font-family: 'Monospace';
+    }
+    #ruleTracker{font-size: 14px;}
+
+    /*styles the elements of each line (rule, premise, conclusion, and line number)*/
+    .premiseBox2 {
+      z-index: 1;
+    }
+    .conclusionBox {
+      z-index: 1;
+    }                                                                                                                     
+
+
+    /************STYLES FOR THE PARTIALLY SOLVED PROOF LEVEL**************/
+    .line {
+      background-color: #474747; 
+      border: 2px outset black; 
+      vertical-align: center;
+    }
+
+    /*display, margin, padding and borders for the line elements*/
+    .box, .ruleBox, .premiseBox, .premiseBox2, .conclusionBox, .lineNumberBox, .ruleBoxExample, .premiseBoxExample, .conclusionBoxExample {
+      display: inline;
+      margin-left: 2px; margin-right: 2px;
+      padding-left:5px; padding-right:5px; padding-top:6px; padding-bottom:6px;
+      border: 2px dashed black; 
+      border-radius: 5px;
+    }
+
+    /*the given lines and problem lines*/
+    .problemGiven, .problemLine {
+      background: #474747; 
+      height: 50px; 
+      margin-left: 10px; margin-right: 10px;
+      margin-top: 5px; margin-bottom: 15px;
+      padding-top: 5px; padding-bottom: 5px;
+      border: 2px outset black;
+    }
+
+    .problemLine {
+      height: 55px;
+      padding-top: 10px; padding-bottom: 13px;
+    }
+
+    #conclusionDiv {
+      border: 2px outset black; 
+      margin-top: 5px; 
+      margin-bottom: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 20px; font-family: 'Arial';
+    }
+
+    /*the button to move to the next line*/
+    .problemButton{background-color: #ffff66; width: 100%;}
+
+    .unjustified{background-color: #ffffff;}
+    .justified{background-color: #858585;}
+
+    /*style the draggable derived elements*/
+    .draggable{
+      background-color: #ffccff; 
+      border: 2px dashed black; 
+      border-radius: 5px;
+      margin-top: 2px; margin-bottom: 2px;
+      padding-left:10px; padding-right:10px; padding-top:6px; padding-bottom:6px;
+    }
+
+    .lineNumberBox {
+      margin-top: 2px; margin-bottom: 2px;
+    }
+    .helper {
+      background-color: #ffff00; 
+      border: 2px dashed black; border-radius: 5px; 
+      padding-left:10px; padding-right:10px; 
+      padding-top:6px; padding-bottom:6px; 
+      z-index: 2;
+    }
+
+
+    /*headings for JT (to ensure that the DT headings style is separate; this is not necessary when JT and DT are on different pages*/
+    .thJT {
+      background-color: #000000; 
+      color: #ffffff; 
+      text-align: center; 
+      font-size: 18; 
+      font-family: 'Arial';
+    }
+
+    /*styles all the buttons*/
+    button{font-size: 14px; border: 1px solid black; border-radius: 5px;}
+
+    /*table fills the entire div*/
+    table{width: 100%;}
+
+    #info, #infoPartial, #studentInfoDiv, #loginDiv {
+        color: #ffffff; 
+        font-family: 'Arial'; font-size: 24;
+        line-height: 80%; 
+        text-align: center; vertical-align: center; 
+        border: outset 5px black;
+    }
+    #info, #infoPartial {
+      padding: 5px;
+    }
+
+    /*used to put : and , in the problem lines*/
+    .colonDiv, .commaDiv, .inlineDiv {display: inline;}
+
+    /*used to put a vertical line before the rule*/
+    .vertical {
+      display: inline; 
+      width: 0px; 
+      height: 75px; 
+      border-left: 2px solid black;
+    }
+
+    .hoverLabel{padding: 3px;}
+ 
+    #colorSelect, #colorSelectPartial{width: 80%;}
+
+    #keyboardTable, #keyboardTable td{border: 1px solid black; border-collapse: collapse;}
+
+    #virtualKeyboardInput{
+      height: 30px; 
+      width: 100%; 
+      border: 2px solid black; 
+      background-color: white; 
+      padding: 2px; 
+      padding-left: 8px;
+    }
+
+    #virtualKeyboardLabel {width: 90%;}
+    #virtualKeyboardInput {margin-top: 5px;}
+    #virtualKeyboardControlsButtons {margin-top: 5px;}
+
+    #justifiedThoughtDivider, #partialProblemDivider {
+      margin-top: 10px; 
+    }
+    #partialProblemDivider {
+      margin-left: 17px; 
+      margin-right: 17px;
+    }
+
+    body{background-color: #474747;}
+
+    /***LOGIN***/
+    #loginDiv {
+      background-color: #33cccc; 
+      color: #000000; 
+      /*height: 200px; */
+      width: 90%;
+      margin-top: 20px;
+    }
+
+    #loginParagraph {
+      margin-top: 75px;
+    }
+
+    #loginWrapper {
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .loginContainer {
+      border: 3px ridge #ff1493;
+      background-color: #33cccc;
+      margin-bottom: 10px; 
+      padding: 10px;
+    }
+
+    .loginContainer a {
+      color: #000000;
+    }
+
+    .loginContainer a:hover {
+      color: #474747;
+    }
+    /***END LOGIN***/
+
+    #rules{margin-top: 20px;}
+
+    .spacing{height: 10px; width: 50%;}
+    .small-spacing{height: 3px; width: 50%;}
+
+    #currentLevelTop {
+      font-weight: bold;
+    }
+
+    .selected{border: 5px solid yellow;}
+
+    /***NAVBAR AND DROPDOWN***/
+
+    /*to center the nav horizontally within its containing div (studentInfoDiv)*/
+    .nav {
+      display: inline-block;
+    }
+
+    .nav a:hover, .nav a, .dropdown-toggle a:hover, .dropdown-toggle a, .dropdown-toggle li:hover, .dropdown-toggle li, .dropdown-menu li:hover, .dropdown-menu li {
+      background-color: transparent !important;
+    }
+
+    .navbar-wrapper, .navbar, .navbar-inner, .container, .nav, .nav-pills {
+      margin-top: 3px; margin-bottom: 3px;
+      padding: 0px;
+    }
+
+    .nav li, .nav li:hover {
+      border: 2px solid black;
+      border-radius: 30px 5px 30px;
+      background-color: transparent !important;
+    }
+
+    .dropdown-menu li, .dropdown-menu li:hover {
+      border: none;
+      border-radius: 0px;
+      background-color: transparent !important;
+    }
+
+    .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+      background-image: none;
+      background-color: #b3b3b3 !important;
+    }
+
+    #dataContainer {
+      margin: 10px;
+    }

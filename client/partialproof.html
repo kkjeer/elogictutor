@@ -1,0 +1,77 @@
+<template name = "partialproof">
+  <!--Login-->
+  {{> logInAndOut}}
+  <!--End Login-->
+
+  {{#if currentUser}}
+  <div class="container-fluid" id="partialProblemDivider">
+
+      <!--Navigation bar-->
+      {{> navigation}}
+      <!--End navigation bar-->
+
+      <!--Headers-->
+      <div class="row">
+        <div class = 'col-sm-2 col-md-2 thJT'>Instructions</div>
+        <div class = 'col-sm-8 col-md-8 thJT' id = 'currentProb'>Current Problem</div>
+        <div class = 'col-sm-2 col-md-2 thJT' id='optionsHeadingPartial'>Draggable Options</div>
+      </div>
+
+      <!--Body-->
+      <div class="row">
+
+        <!--Tracker-->
+        <div class = 'col-sm-2 col-md-2 tdContainer' id = 'tdTrackerPartial'>
+          <div class='row spacing'></div>
+          <p id = 'ruleInstructionsPartial'>Drag a rule into the yellow box to complete the line.<br><br>Double-click a rule to see an example. Double-click the example to remove it.</p>
+          <p id = 'colorSelectParagraph'><br><br>Select the colors for eLogicTutor:</p>
+              <select id = 'colorSelectPartial'>
+                <option value = '0'>Default</option>
+                <option value = '1'>Serene</option>
+                <option value = '2'>Dark</option>
+                <option value = '3'>Calm</option>
+                <option value = '4'>Ocean</option>
+                <option value = '5'>Bright</option>
+                <option value = '6'>Watermelon</option>
+                <option value = '7'>Color-Sensitive</option>
+              </select>
+              <br>
+          <div id = 'ruleTracker'></div>
+          <!--<input type = 'checkbox' id = 'hintsTogglePartial'><span id = 'hintsLabelPartial'>Enable pop-up examples</span>-->
+        </div>
+        <!--End Tracker-->
+
+        <!--Exercise-->
+        <div class = 'col-sm-8 col-md-8 tdContainer' id = 'tdLinePartial'>
+          <div id = 'currentLevel'></div>
+          <br>    
+          <div id = 'example'>line# conclusion: premise1, premise2    RULE</div>
+          <br>  
+          <div id = "line"></div>
+          <br>
+          <div id = 'minMastery'></div>
+        </div>
+        <!--End Exercise-->
+
+        <!--Options-->
+        <div class = 'col-sm-2 col-md-2 tdContainer' id = 'tdRulesPartial'> 
+          <div class="row" id = "rules">
+            <table cellspacing = '2'>
+            </table>
+          </div>
+        </div>
+        <!--End Options-->
+
+      </div>
+      <!--End Body-->
+
+      <!--Info about eLogicTutor-->
+      {{> info}}
+      <!--End info-->
+
+  </div>
+  <!--End partialProblemDivider-->
+
+  {{/if}}
+
+</template>

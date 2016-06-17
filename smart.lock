@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "jquery-ui-touch-punch": {}
+    },
+    "packages": {
+      "jquery-ui-touch-punch": {
+        "git": "https://github.com/Dsyko/meteor-jquery-ui-touch-punch.git",
+        "tag": "v1.2.4",
+        "commit": "505f1e4620da92f8f96cc20dd0fd4dd3dc073eee"
+      }
+    }
+  }
+}

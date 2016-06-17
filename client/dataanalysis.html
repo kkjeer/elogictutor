@@ -1,0 +1,77 @@
+<template name="dataanalysis">
+{{> logInAndOut}}
+
+{{#if currentUser}}
+{{> navigation}}
+<div id = 'dataContainer'>
+<p>
+    User Name (All Functions): <select id = 'nametoprint'></select>
+    <br>Return Type (Time): <select id = 'typetoprint'>
+                                <option value = 'problem'>Problem (Average Time)</option>
+                                <option value = 'mastery'>Mastery (Average Time)</option>
+                                <option value = 'level'>Level (Average Time)</option>
+                                <option value = 'system'>System (Average Time)</option>
+                            </select> 
+    <br>Rule (<strong>Problem or Mastery</strong> Time and Hints): <select id = 'ruletoprint'>
+                                                                        <option value = 'all'>All</option>
+                                                                        <option value = 'MP'>MP</option>
+                                                                        <option value = 'MT'>MT</option>
+                                                                        <option value = 'DS'>DS</option>
+                                                                        <option value = 'ADD'>ADD</option>
+                                                                        <option value = 'SIMP'>SIMP</option>
+                                                                        <option value = 'CONJ'>CONJ</option>
+                                                                        <option value = 'HS'>HS</option>
+                                                                        <option value = 'CD'>CD</option>
+                                                                        <option value = 'DN'>DN</option>
+                                                                        <option value = 'DeM'>DeM</option>
+                                                                        <option value = 'Impl'>Impl</option>
+                                                                        <option value = 'CP'>CP</option>
+                                                                        <option value = 'Equiv'>Equiv</option>
+                                                                        <option value = 'Comm'>Comm</option>
+                                                                        <option value = 'Assoc'>Assoc</option>
+                                                                        <option value = 'Dist'>Dist</option>
+                                                                        <option value = 'Abs'>Abs</option>
+                                                                        <option value = 'Exp'>Exp</option>
+                                                                        <option value = 'Taut'>Taut</option>
+                                                                    </select>
+</p>
+
+<table>
+    <tr>
+        <th>Functions for specified rule(s)</th>
+        <th>Functions for each rule</th>
+    </tr>
+    <tr>
+        <td><button id = 'averageTimeButton' style = 'background-color: cyan'>Find the average time of the given type for the given user (and rule)</button></td>
+        <td><button id = 'averageTimeAllButton' style = 'background-color: cyan'>Find the average problem or mastery time for the given user for each rule</button></td>
+    </tr>
+    <tr>
+        <td><button id = 'hintsInfoButton' style = 'background-color: mediumspringgreen'>Get the hint information for the given user and rule</button></td>
+        <td><button id = 'hintsInfoAllButton' style = 'background-color: mediumspringgreen'>Get the hint information for the given user and each rule</button></td>
+    </tr>
+    <tr>
+        <td><button id = 'proportionsButton' style = 'background-color: orange'>Find the correct/incorrect answer proportions for the given user and rule</button></td>
+        <td><button id = 'proportionsAllButton' style = 'background-color: orange'>Find the correct/incorrect answer proportions for the given user and each rule</button></td>
+    </tr>
+    <tr>
+        <th>Printing/Removing for specified user(s)</th>
+        <th>Printing/Removing for all users</th>
+    </tr>
+    <tr>
+        <td><button id = 'printUserLogsButton' style = 'background-color: blueviolet'>Print the logs for the given user</button></td>
+        <td><button id = 'printAllLogsButton' style = 'background-color: blueviolet'>Print all logs</button></td>
+    </tr>
+    <tr>
+        <td><button id = 'removeUserLogsButton' style = 'background-color: red'>Remove the logs for the given user</button></td>
+        <td><button id = 'removeAllLogsButton' style = 'background-color: red'>Remove all logs</button></td>
+   </tr>
+   <tr>
+    <td><button id='printKCButton'>Print the KC scores for the given user and rule</button></td>
+    <td><button id='printAllKCButton'>Print the KC scores for each user and each rule</button></td>
+   </tr>
+</table>
+
+<div id="dataResults"></div>
+</div>
+{{/if}}
+</template>

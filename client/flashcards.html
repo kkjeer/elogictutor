@@ -1,0 +1,157 @@
+<template name="flashcards">
+  <!--Login-->
+  {{> logInAndOut}}
+  <!--End Login-->
+
+  {{#if currentUser}}
+    <div class='container-fluid' id="justifiedThoughtDivider">
+      
+      <!--Navigation bar-->
+      {{> navigation}}
+      <!--End navigation bar-->
+
+      <!--Headers-->
+      <div class="row">
+        <div class = 'col-sm-3 col-md-3 thJT' id='masteryHeading'>Mastery of the Rules</div>
+        <div class = 'col-sm-7 col-md-7 thJT'>Current Problem</div>
+        <div class = 'col-sm-2 col-md-2 thJT' id='optionsHeading'>Draggable Options</div>
+      </div>
+      <!--End headers-->
+
+      <!--Body-->
+      <div class="row">
+
+        <!--Tracker-->
+        <div class = 'col-sm-3 col-md-3 tdContainer' id = 'tdTracker'>
+          <div class='row spacing'></div>
+          <div id = 'ruleTracker'></div>
+          <p id = 'colorSelectParagraph'><br><br>Select the colors for eLogicTutor:</p>
+          <select id = 'colorSelect'>
+            <option value = '0'>Default</option>
+            <option value = '1'>Serene</option>
+            <option value = '2'>Dark</option>
+            <option value = '3'>Calm</option>
+            <option value = '4'>Ocean</option>
+            <option value = '5'>Bright</option>
+            <option value = '6'>Watermelon</option>
+            <option value = '7'>Color-Sensitive</option>
+          </select>
+          <br><br><br>
+        </div>
+        <!--End Tracker-->
+      
+        <!--Exercise-->
+        <div class = 'col-sm-7 col-md-7 tdContainer' id = 'tdLine'>
+          <div class='row'>
+            <div class='col-sm-1 col-md-1'></div>
+            <div class='col-sm-10 col-md-10' id = 'currentLevel'></div>
+            <div class='col-sm-1 col-md-1'></div>
+          </div>
+          <div class='row spacing'></div> 
+
+          <div class='row' id = 'exlabel'>Example Line:</div>
+          <div class='row' id = 'example'></div>
+          <div class='row spacing'></div>
+
+          <div class='row' id = 'exerciselabel'>Exercise:</div>
+          <div class='row spacing'></div>
+
+          <div class='row' id = "line"></div>
+          <!--<div class='row spacing'></div>-->
+
+          <div class = 'hoverDiv' id = 'hoverFlashcards'></div>
+
+          <div class='row' id = 'virtualKeyboardDiv'>
+            <div class='row'>
+              <div class = 'col-sm-1 col-md-1'></div>
+              <div class='col-sm-10 col-md-10' id = 'virtualKeyboardLabel'>Click the buttons below to type in your answer.</div>
+              <div class = 'col-sm-1 col-md-1'></div>
+            </div>
+              <div id = 'virtualKeyboardInput'></div>
+              <div id = 'virtualKeyboardControlButtons'>
+                  <button class = 'virtualKeyboardButton' id = 'Delete'>Delete</button>
+                  <button class = 'virtualKeyboardButton' id = 'Clear'>Clear</button>
+                  <button class = 'virtualKeyboardButton' id = 'Submit'>Submit</button>
+              </div>
+              <div class='row' id = 'virtualKeyboardLogicButtons'>
+                  <button class = 'virtualKeyboardButton' id = 'leftparen'>(</button>
+                  <button class = 'virtualKeyboardButton' id = 'rightparen'>)</button>
+                  <button class = 'virtualKeyboardButton' id = 'and'> ∧ </button>
+                  <button class = 'virtualKeyboardButton' id = 'or'> ∨ </button>
+                  <button class = 'virtualKeyboardButton' id = 'not'> ¬ </button>
+                  <button class = 'virtualKeyboardButton' id = 'imp'> → </button>
+                  <button class = 'virtualKeyboardButton' id = 'equal'> ↔ </button>
+              </div>
+              <div class='row' id = 'virtualKeyboardButtons1'>
+                  <button class = 'virtualKeyboardButton' id = 'Q'>Q</button>
+                  <button class = 'virtualKeyboardButton' id = 'W'>W</button>
+                  <button class = 'virtualKeyboardButton' id = 'E'>E</button>
+                  <button class = 'virtualKeyboardButton' id = 'R'>R</button>
+                  <button class = 'virtualKeyboardButton' id = 'T'>T</button>
+                  <button class = 'virtualKeyboardButton' id = 'Y'>Y</button>
+                  <button class = 'virtualKeyboardButton' id = 'U'>U</button>
+                  <button class = 'virtualKeyboardButton' id = 'I'>I</button>
+                  <button class = 'virtualKeyboardButton' id = 'O'>O</button>
+                  <button class = 'virtualKeyboardButton' id = 'P'>P</button>
+              </div>
+              <div class='row' id = 'virtualKeyboardButtons2'>
+                  <button class = 'virtualKeyboardButton' id = 'A'>A</button>
+                  <button class = 'virtualKeyboardButton' id = 'S'>S</button>
+                  <button class = 'virtualKeyboardButton' id = 'D'>D</button>
+                  <button class = 'virtualKeyboardButton' id = 'F'>F</button>
+                  <button class = 'virtualKeyboardButton' id = 'G'>G</button>
+                  <button class = 'virtualKeyboardButton' id = 'H'>H</button>
+                  <button class = 'virtualKeyboardButton' id = 'J'>J</button>
+                  <button class = 'virtualKeyboardButton' id = 'K'>K</button>
+                  <button class = 'virtualKeyboardButton' id = 'L'>L</button>
+              </div>
+              <div class='row' id = 'virtualKeyboardButtons3'>
+                  <button class = 'virtualKeyboardButton' id = 'Z'>Z</button>
+                  <button class = 'virtualKeyboardButton' id = 'X'>X</button>
+                  <button class = 'virtualKeyboardButton' id = 'C'>C</button>
+                  <button class = 'virtualKeyboardButton' id = 'V'>V</button>  
+                  <button class = 'virtualKeyboardButton' id = 'B'>B</button>
+                  <button class = 'virtualKeyboardButton' id = 'N'>N</button>
+                  <button class = 'virtualKeyboardButton' id = 'M'>M</button> 
+              </div>
+          </div>
+        </div>
+        <!--End Exercise-->
+
+        <!--Options-->
+        <div class = 'col-sm-2 col-md-2 tdContainer' id = 'tdRules'> 
+          <div class='row'>    
+            <p id = 'ruleInstructions'></p>
+          </div>
+
+          <div class='row'>
+            <button id = 'nextLineButton'>Next Line</button>
+          </div>
+
+          <div class='row'>
+            <button id = 'nextLevelButton'>Next Level</button>
+          </div>
+
+          <div class='row' id = "rules">
+            <table cellspacing = '2'></table>
+          </div>
+
+          <div class='row'>
+            <span id = 'hintsLabel'>Enable a pop-up example of the selected rule</span>
+            <input type = 'checkbox' id = 'hintsToggle'>
+          </div>
+        </div>
+        <!--End Options-->
+
+      </div>
+      <!--End Body-->
+
+      <!--Info about eLogicTutor-->
+      {{> info}}
+      <!--End info-->      
+
+  </div>
+  <!--End justifiedThoughtDivider-->
+
+{{/if}}
+</template>
